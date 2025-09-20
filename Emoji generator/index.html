@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Emoji</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: salmon;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h2{
+            font-size: 2rem;
+            color: aliceblue;
+
+        }
+
+        .section{
+            text-align: center;
+        }
+
+        .btn{
+            font-size: 5rem;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            filter: grayscale();
+            transition: filter .2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+            filter: grayscale(0);
+        }
+
+        .emoji-name{
+            color: darkblue;
+            font-weight: 600;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2>Ramdom Emoji</h2>
+    <div class="section">
+        <button class="btn" id="btn">Click</button>
+        <p class="emoji-name" id="emoji-name">Emoji name</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
