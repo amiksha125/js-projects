@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Convertor</title>
+
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            background-color: yellow;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 0;
+        }
+
+        .container{
+            background-color: darkcyan;
+            color: aliceblue;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .currency-container{
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .currency-container select{
+            padding: 10px;
+
+        }
+
+        select:focus, input:focus{
+           outline: none;
+        }
+
+        .currency-container input{
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            text-align: right;
+            color: aliceblue;
+        }
+
+        .exchange-rate{
+            font-size: 16px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <h1>Currency Convertor</h1>
+        <div class="currency-container">
+            <select id="currency-first">
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+                <option value="USD" selected>USD</option>
+            </select>
+            <input type="number" id="worth-first" value="1" min="0">
+        </div>
+        <div class="currency-container">
+            <select id="currency-second">
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR" selected>INR</option>
+                <option value="JPY">JPY</option>
+                <option value="USD">USD</option>
+            </select>
+            <input type="number" id="worth-second" disabled>
+        </div>
+
+        <p class="exchange-rate" id="exchange-rate">
+            1 USD = 138.5802 JPY
+        </p>
+    </div>
+    
+</body>
+</html>
