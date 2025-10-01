@@ -4,13 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background: linear-gradient(to left top, yellow, lightblue, yellow);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            color: darkcyan;
+         }
+
+         .container{
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            max-width: 450px;
+            width: 85%;
+         }
+
+         .input-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 700;
+         }
+
+         .input{
+           padding: 10px;
+           width: 70%;
+           background: rgba(255, 255, 255, 0.3);
+           border-color: rgba(255, 255, 255, 0.5);
+           font-size: 18px;
+           border-radius: 10px;
+           color: darkgreen;
+           outline: none;
+         }
+
+         .error{
+            color: red;
+         }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1 class="heading" id="heading">Weight Convertor</h1>
         <div class="input-container">
             <label for="pounds">Pounds:</label>
-            <input type="number" class="input" id="input" step=".1">
+            <input type="number" class="input" id="input" step=".1" placeholder="Enter number">
         </div>
         <p>Your weight in kg is: <span id="result">300</span></p>
         <p class="error" id="error">Error</p>
