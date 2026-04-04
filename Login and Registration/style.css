@@ -148,6 +148,13 @@ form {
     background: #4794ec;
     z-index: 2;
     border-radius: 150px;
+    transition: 1.8s ease-in-out;
+}
+
+
+.container.active .toggle-box::before {
+    left: 90%;
+
 }
 
 .toggle {
