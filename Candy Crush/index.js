@@ -50,3 +50,66 @@ function dragStart() {
     // this refer to the tile that was clicked om for dragging
   currTile = this
 }
+
+function dragDrop() {
+    // this refers to the target tile that was dropped on
+  otherTile = this;
+}
+// allow dragging only to left , right, above and below
+// for this use id attribute's value
+function dragEnd() {
+    // swap the images
+    
+    let currCoords = currTile.id.split("-");// id = "0-0" -> ["0", "0"]
+    let r = parseInt(currCoords[0])
+    let c = parseInt(currCoords[1]);
+
+    let otherCoords = otherTile.id.split("-");
+    let  r2 = parseInt(otherCoords[0]);
+    let c2 = parseInt(otherCoords[1])
+
+    let moveLeft = c2 == c - 1 && r2 == r;
+    let moveRight = c2 == c + 1 && r == r2;
+    let moveUp = r2 == r - 1 && c == c2;
+    let moveDown = r2 == r + 1 && c == c2;
+
+    let isAdjacent = moveLeft || moveRight || moveDown || moveUp
+
+   if(isAdjacent){
+     let currImg = currTile.src;
+     let otherImg = otherTile.src;
+     currTile.src = otherImg;
+     otherTile.src = currImg;
+   }
+}
+
+function crushCandy() {
+  // check rows
+
+  for(let r = 0; r < rows; r++){
+    for( let c = 0; c < columns - 2; c++){
+       let candy1 = board[r][c];
+       let candy2 = board[r][c + 1];
+       let candy3 = board[r + 1][c];
+       
+       if(candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")){
+        candy1.src = "./imgs/blank.png";
+        candy2.src = "./imgs/blank.png";
+        candy3.src = "./imgs/blank.png";
+
+       }
+    }
+  }
+}
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+}
+
+function dragLeave() {
+
+}
+
