@@ -16,7 +16,8 @@ function updateResult(){
         }, 2000); //after 2 sec stop showing error msg
     } else {
         // + for string to number casting
-    resultEl.innerHTML = (+inputEl.value / 2.2).toFixed(2);
+    resultEl.innerHTML = (
+        +inputEl.value / 2.2).toFixed(2);
 
     clearTimeout(resultTime);
     resultTime = setTimeout(() => {
